@@ -49,22 +49,36 @@
               <li>CSS defines colors, aesthetics, visual layout, and organization</li>
               <li>We use CSS to define style rules for specific elements of an HTML page and format them using different style options</li>
               <li>Three major ways to style a webpage</li>
+              <ul>
+                <li>Inline css-section</li>
                 <ul>
-                    <li>inline css-section</li>
+                  <li>When a developer wants to style an element directly in the HTML file, it is called inline css-section</li>
+                  <li>Inline styles apply to a specific HTML tag using style attribute with a CSS rule</li>
+                  <li>Useful for quick and permanent changes but less flexible than external or internal style sheets</li>
+                  <li>Actually possible to embed an entire stylesheet in the HTML file</li>
+                  <ul>
+                    <li><strong>Internal style sheets</strong> contains CSS rules for the webpage in the head section of the HTML file</li>
                     <ul>
-                        <li>When a developer wants to style an element directly in the HTML file, it is called inline css-section</li>
-                        <li>Inline styles apply to a specific HTML tag using style attribute with a CSS rule</li>
-                        <li>Useful for quick and permanent changes but less flexible than external or internal style sheets</li>
-                        <li>Actually possible to embed an entire stylesheet in the HTML file</li>
-                          <ul>
-                              <li><strong>Internal stlye sheets</strong> contains CSS rules for the webpage in the head seciton of the HTML file</li>
-                                <ul>
-                                    <li>Rules will only apply to that page and are able to configure CSS classes and ID's</li>
-                                    <li>A single change to the CSS rule will apply to all tagged page elements</li>
-                                </ul>
-                          </ul>
+                      <li>Rules will only apply to that page and are able to configure CSS classes and IDs</li>
+                      <li>A single change to the CSS rule will apply to all tagged page elements</li>
                     </ul>
+                  </ul>
                 </ul>
+                <li>External style sheets</li>
+                <ul>
+                  <li>An external CSS file is linked to the HTML file using the <code>&lt;link&gt;</code> tag in the head section</li>
+                  <li>Allows for centralized styling across multiple HTML files</li>
+                  <li>Keeps all CSS rules in a seperate file, making it easier to change designs</li>
+                  <li>Modifications in the external CSS file will affect all linked HTML files</li>
+                  <li>Enables easy maintenance and separation of concerns between HTML and CSS</li>
+                </ul>
+                <li>Imported style sheets</li>
+                <ul>
+                  <li>Similar to external style sheets, imported style sheets are linked to the HTML file but using the <code>@import</code> rule in a style block</li>
+                  <li>Imported CSS files are loaded after the main CSS file and can override styles</li>
+                  <li>Provides flexibility to include different CSS files based on specific conditions or requirements</li>
+                </ul>
+              </ul>
             </ul>
           </li>
         </ul>
