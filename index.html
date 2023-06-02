@@ -45,6 +45,179 @@
       </section>
    
       <section class="card" id="git-section">
+        <h2>GIT + GITHUB</h2>
+        <ul>
+          <li>
+            Git (Global Information Tracker) is a version control system that keeps track of all versions of your project
+            <ul>
+              <li>Git is great for tracking local changes on your PC</li>
+              <li>It is installed locally on your computer and lets you open a terminal (CLI) called bash/git bash</li>
+              <li>Can be used to clone, create new branches, switch to different branches (called "checkout"), etc.</li>
+              <li>Refer to the Git Command Cheat Sheet for some common commands to use
+                <ul>
+                  <li>git init: Initializes a new Git repository in the current directory.</li>
+                  <li>git clone &lt;repository&gt;: Copies a repository from a remote source to your local machine.</li>
+                  <li>git add &lt;file&gt;: Adds a file to the staging area to be included in the next commit.</li>
+                  <li>git commit -m "message": Creates a new commit with the changes in the staging area and adds a commit message.</li>
+                  <li>git push: Uploads local commits to a remote repository.</li>
+                  <li>git pull: Fetches changes from a remote repository and merges them into the current branch.</li>
+                  <li>git branch: Lists all branches in the repository.</li>
+                  <li>git checkout &lt;branch&gt;: Switches to a different branch.</li>
+                  <li>git merge &lt;branch&gt;: Merges changes from a specified branch into the current branch.</li>
+                </ul>
+              </li>
+              <li>Can be connected to a Github repo for version control and can push, pull, merge, pull and more to the chosen Github repository
+                <ul>
+                  <li>Must first establish SSH keys from your local machine and connect them to your Github account online</li>
+                  <li>Can be difficult to establish so please refer to the Bootcamp's instructions as well as on Github's official documents</li>
+                  <li>Also, it's important to make sure that you are always connected to your Github account using:</li>
+                  <ul>
+                    <li>git status: show modified filed in your working directory, staged for next commit</li>
+                    <li>git config --list: Shows current settings from the config file</li>
+                    <li>git config user.name: displays current registered username</li>
+                    <li>git config user.email: shows current registered email</li>
+                  </ul>
+                </ul>
+              </li>
+              <li>A Git local environment refers to your own computer or development machine where you have a local copy of a Git repo.
+                <ul>
+                  <li>Essentially the environment where you do Git operations and make changes to your codebase</li>
+                  <li>Open your Git repo through the CLI and then launch the repo with the command "code ." to open it in Visual Studio Code</li>
+                  <li>It's a safe space to test code without touching the online Github repo. Once your code is tested, it can then be pushed to the main Github repo (preferably as a separate branch AND NOT the main branch)</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            Github is a cloud-based hosting service that lets us keep track of repositories (or "repo's")
+            <ul>
+              <li>Similar to Git but via the cloud</li>
+              <li>Allows collaboration from multiple individuals for version control and is paramount towards the Agile method in a corporate setting
+                <ul>
+                  <li>Agile principles lead to flexibility, customer satisfaction, and efficient software development.</li>
+                  <li>Some of the key principles:
+                    <ul>
+                      <li>Iterative and incremental development in small cycles (iterations/sprints)</li>
+                      <li>Continuous collaboration between teams, stakeholders, and end-users</li>
+                      <li>Customer-centric approach, prioritizing their needs and incorporating feedback</li>
+                      <li>Embracing change and adapting plans and requirements as necessary</li>
+                      <li>Self-organizing cross-functional teams taking collective responsibility</li>
+                      <li>Focus on continuous improvement through retrospectives</li>
+                      <li>Popular frameworks: Scrum, Kanban, Extreme Programming (XP)</li>
+                    </ul>
+                  </li>
+                  <li>Gives you the ability to create an online repo which can be private or public and lets you continue your work without having to be tied down to the same PC workstation.
+                    <ul>
+                      <li>I do believe creating new SSH keys is needed on each PC workstation so that you can be connected to your Github account from the git bash terminal</li>
+                    </ul>
+                  </li>
+                  <li>README files are used to pass along useful information to anyone who visits the repo on github</li>
+                  <li>Licenses are also needed for each repo, especially if they're public because it lets others know what can be done with the repo legally.</li>
+                  <li>Github offers a task management tool called Github issues</li>
+                </ul>
+              </li>
+              <li>Git and Github branching
+                <ul>
+                  <li>Default branch is usually called main or master</li>
+                  <li>NEVER DO CODING IN THE MAIN BRANCH!!!</li>
+                  <li>Instead, create a separate branch off of the main branch for code testing
+                    <ul>
+                      <li>Feature branches is what they are usually called but can be called other names at user discretion</li>
+                      <li>Do this via the Git terminal. Terminal command for it is in the cheat sheet and on the bootcamp module with further instructions</li>
+                    </ul>
+                  </li>
+                  <li>In the feature branch, we make commits of all the changes we make to the code while working. Here is a general rundown of what to do in the Gitbash terminal
+                    <ol type="i">
+                      <li>Create a feature branch:
+                        <ol>
+                          <li>git branch feature-branch</li>
+                          <li>git checkout feature-branch</li>
+                        </ol>
+                      </li>
+                      <li>Then make changes in your local environment (work on your code, modify files, etc.)</li>
+                      <li>Stage the changes
+                        <ol>
+                          <li>git add file1.js file2.js (this is just an example and not actual file names)</li>
+                        </ol>
+                      </li>
+                      <li>Commit the changes
+                        <ol>
+                          <li>Git commit -m "Implement feature XYZ"</li>
+                        </ol>
+                      </li>
+                      <li>Repeat steps iii-iv while continuing to make changes, staging them, and creating commits as needed</li>
+                      <li>Push the changes
+                        <ol>
+                          <li>When you're ready to share with others, use the following command below to push your commits</li>
+                          <li>Git push origin feature-branch</li>
+                          <li>The push will be sent to the github repo where you will create what is called a "pull request". Other members in the team will review your pull request. Once the branch is reviewed and accepted, it will merge into the main branch.</li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                  <li>You might be wondering what are commits and pushing because I for sure was confused
+                    <ul>
+                      <li>Commits capture a specific state of the codebase at a given point in time
+                        <ul>
+                          <li>Each commit is unique with its own identifier, commit messages, any references to parent commit(s).</li>
+                        </ul>
+                      </li>
+                      <li>Commits show a linear or branching history, showing the progress of the codebase over time</li>
+                    </ul>
+                  </li>
+                  <li>How often do you do commits?
+                    <ul>
+                      <li>Varies from person to person and from project to project</li>
+                      <li>Common practices:
+                        <ul>
+                          <li>Granularity
+                            <ul>
+                              <li>Commits should represent logical units of work. It's generally recommended to make commits that encapsulate a cohesive set of changes related to a specific task or feature. This ensures that each commit is focused and makes it easier to understand the history of changes.</li>
+                            </ul>
+                          </li>
+                          <li>Regularly
+                            <ul>
+                              <li>It's good practice to make commits regularly rather than accumulating a large number of changes before committing. Regular commits help in maintaining a clear history, facilitate collaboration, and allow for easier rollback if necessary.</li>
+                            </ul>
+                          </li>
+                          <li>Milestones or Completed Features
+                            <ul>
+                              <li>Sometimes made when huge changes such as implementing new features. A sort of checkpoint status as you will.</li>
+                            </ul>
+                          </li>
+                          <li>Atomic changes
+                            <ul>
+                              <li>A commit represents a single conceptual change. If a change spans multiple files or modifications, it's recommended to split them into separate commits for clarity and easier tracking.</li>
+                            </ul>
+                          </li>
+                          <li>Continuous Integration/Deployment
+                            <ul>
+                              <li>Commits trigger automated processes like builds, tests, and deployments. In such cases, making commits more frequently, ideally after each completed task or code change, can help in ensuring smooth integration and continuous delivery.</li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>Well, what about Staging? What is that?
+                    <ul>
+                      <li>Staging is necessary and must be done before making a commit.</li>
+                      <li>Well not necessary, but it ensures that the properly selected files are committed instead of the entire repo</li>
+                      <li>Staging allows you to selectively choose which changes you want to include in your next commit
+                        <ul>
+                          <li>By changes, I mean manually selecting which files to be staged for commits</li>
+                        </ul>
+                      </li>
+                      <li>If staging isn't done, if you ran the "git commit" command, Git would commit all of the modified files in your local repo by default.</li>
+                      <li>Can be VERY problematic if you accidentally committed other files that were not ready to be committed yet</li>
+                      <li>Staging is the safeguard against accidentally committing unintended changes and gives developers the ability to consciously curate the contents of each commit.</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
    
       </section>
    
